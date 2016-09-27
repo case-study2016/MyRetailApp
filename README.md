@@ -78,4 +78,59 @@ http://swagger.io/swagger-ui/
 # https://spring.io/guides/gs/accessing-data-mongodb/
 
 
+# Setting your email address for every repository on your computer
 
+Open Git Bash.
+
+Set your email address with the following command:
+
+git config --global user.email "your_email@example.com"
+Confirm that you have set your email address correctly with the following command.
+
+git config --global user.email
+your_email@example.com
+
+
+
+Set up your local directory
+Set up Git on your machine if you haven't already.
+
+
+mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin https://remyaboben@bitbucket.org/remyaboben/autoserv_v1.git
+Create your first file, commit, and push
+echo "remyaboben" >> contributors.txt
+git add contributors.txt
+
+
+git commit -m 'Initial commit with contributors'
+git push -u origin master
+
+#  MONGO DB
+http://javabeat.net/monogodb-installation-windows/
+
+# expose API to multiple store clients
+
+http://docs.spring.io/spring-data/mongodb/docs/1.2.x/reference/html/mongo.repositories.html
+
+https://docs.mongodb.com/manual/reference/method/js-database/
+
+http://www.javaadvent.com/2014/12/creating-a-rest-api-with-spring-boot-and-mongodb.html
+
+
+
+# commands for mongo db
+https://www.tutorialspoint.com/mongodb/mongodb_environment.htm
+
+db.stats()
+use MyRetail
+db
+use test
+show dbs
+db.book
+show collections
+book
+db.book
+db.book.find()
