@@ -134,3 +134,10 @@ show collections
 book
 db.book
 db.book.find()
+
+
+# http://www.jsonschema2pojo.org/
+This is to generate TOs based on json
+# error and exception handling for product name API
+
+#installed postman sign in using libin.starr google account
