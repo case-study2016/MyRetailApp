@@ -138,6 +138,32 @@ db.book.find()
 
 # http://www.jsonschema2pojo.org/
 This is to generate TOs based on json
+http://www.java2blog.com/2013/11/gson-example-read-and-write-json.html
+http://stackoverflow.com/questions/5490789/json-parsing-using-gson-for-java
+https://codedump.io/share/iWszq4CbXa5r/1/creating-a-restful-web-service-with-spring-boot
 # error and exception handling for product name API
 
 #installed postman sign in using libin.starr google account
+
+# PCF integration
+https://login.run.pivotal.io/login
+https://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry-dev/introduction
+http://docs.run.pivotal.io/
+http://docs.run.pivotal.io/cf-cli/install-go-cli.html#windows
+https://console.run.pivotal.io/tools
+Hello*****
+
+# mongodb commands
+C:\mongodb\bin>mongo.exe
+MongoDB shell version: 3.2.9
+connecting to: test
+> show dbs
+MyRetail      0.000GB
+PriceInfo     0.000GB
+ProductPrice  0.000GB
+local         0.000GB
+test          0.000GB
+C:\mongodb\bin>mongod.exe --dbpath="c:\mongodb\data\db"
+ use ProductPrice
+ db.productPriceInfo.find().pretty();
+ 

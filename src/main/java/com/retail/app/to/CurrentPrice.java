@@ -1,6 +1,8 @@
 
 package com.retail.app.to;
 
+import java.math.BigDecimal;
+
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,7 +13,7 @@ public class CurrentPrice {
 
     @SerializedName("value")
     @Expose
-    private Double value;
+    private BigDecimal value;
     @SerializedName("currency_code")
     @Expose
     private String currencyCode;
@@ -21,7 +23,7 @@ public class CurrentPrice {
      * @return
      *     The value
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -30,7 +32,7 @@ public class CurrentPrice {
      * @param value
      *     The value
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 

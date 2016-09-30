@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.retail.app.repository.ProductPriceInfoRepository;
 import com.retail.app.to.Item;
+import com.retail.app.to.ProductPriceInfo;
 import com.retail.app.util.Constants;
 import com.retail.app.util.WebServiceUtil;
 
@@ -14,6 +16,10 @@ public class ProductDetailsManager {
 
 	@Autowired
 	WebServiceUtil webServiceUtil;
+	
+    @Autowired
+    private ProductPriceInfoRepository productPriceInfoRepository; 
+    
 	public String getProductName(Integer id) throws Exception {
 		String productName = null;
 		String errorMessage = null;
@@ -29,7 +35,8 @@ public class ProductDetailsManager {
         }
         return productName;
 	}
-	public void getProductPriceInfo(Integer id) {
+	public ProductPriceInfo getProductPriceInfo(String id) {
+		ProductPriceInfo productPriceInfo = null;
 		/* TODO 
 			Create  a helper service to insert following records to mongodb
 			1. product id 
@@ -41,6 +48,9 @@ public class ProductDetailsManager {
 		    
 		    
 		 * */
+		
+		productPriceInfo = productPriceInfoRepository.findOne(id);
+		return productPriceInfo;
 	}
 
 

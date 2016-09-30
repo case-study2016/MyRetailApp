@@ -3,22 +3,36 @@ package com.retail.app.services;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.retail.app.processor.ProductDetailsManager;
+import com.retail.app.repository.ProductPriceInfoRepository;
+import com.retail.app.to.CurrentPrice;
 import com.retail.app.to.ErrorResponseTO;
+import com.retail.app.to.ProductPriceInfo;
 import com.retail.app.to.ProductResponseTO;
+
+import java.math.BigDecimal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 public class ProductsAPI {
     @Autowired
     ProductDetailsManager productDetailsManager;
-    @RequestMapping("/products/{id}")
+    
+    @Autowired
+    private ProductPriceInfoRepository productPriceInfoRepository;    
+    
+    @RequestMapping(value="/products/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getProductAndPriceDetails(@PathVariable Integer id) throws Exception {
     	ResponseEntity<?> responseEntity = null;
+    	ProductPriceInfo productPriceInfo = null;
     	String output = null;
     	System.out.println("productId>>>>"+id);
         //call api.target.com external API through ProductDetailsManager
@@ -40,10 +54,30 @@ public class ProductsAPI {
         
         // Call pricing information from a NoSQL data store , MongoDB
         
-       productDetailsManager.getProductPriceInfo(id);
+       productPriceInfo = productDetailsManager.getProductPriceInfo(id.toString());
+       System.out.println(productPriceInfo.getProductPrice());
+       if(productPriceInfo.getProductPrice() != null && productPriceInfo.getCurrencyCode()!= null){
+    	   CurrentPrice currentPrice = new CurrentPrice();
+    	   currentPrice.setCurrencyCode(productPriceInfo.getCurrencyCode());
+    	   currentPrice.setValue(productPriceInfo.getProductPrice());
+    	   productResponseTO.setCurrentPrice(currentPrice);
+       }
        return responseEntity;
         
         
+    }
+    
+    @RequestMapping(value="/products/price", method = RequestMethod.POST)
+    public Map<String, Object> createProductPriceInfo(@RequestBody Map<String, Object> productPriceMap){
+    	ProductPriceInfo productpriceinfo = new ProductPriceInfo(
+    		  productPriceMap.get("productId").toString(), 
+    		  new BigDecimal(productPriceMap.get("productPrice").toString()),
+    		  productPriceMap.get("currencyCode").toString());
+      
+      Map<String, Object> response = new LinkedHashMap<String, Object>();
+      response.put("message", "Product Price Info created successfully");
+      response.put("productpriceinfo", productPriceInfoRepository.save(productpriceinfo));
+      return response;
     }
     
 }
