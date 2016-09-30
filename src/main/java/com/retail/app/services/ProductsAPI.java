@@ -9,6 +9,7 @@ import com.retail.app.to.ErrorResponseTO;
 import com.retail.app.to.ProductPriceInfo;
 import com.retail.app.to.ProductResponseTO;
 
+
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -66,7 +67,7 @@ public class ProductsAPI {
         
         
     }
-    
+    //This created product price details in DB
     @RequestMapping(value="/products/price", method = RequestMethod.POST)
     public Map<String, Object> createProductPriceInfo(@RequestBody Map<String, Object> productPriceMap){
     	ProductPriceInfo productpriceinfo = new ProductPriceInfo(
@@ -79,5 +80,27 @@ public class ProductsAPI {
       response.put("productpriceinfo", productPriceInfoRepository.save(productpriceinfo));
       return response;
     }
+    
+    //This updated product price details in DB
+    @RequestMapping(value="/products/{id}", method = RequestMethod.PUT)
+    public Map<String, Object> updateProductPriceInfo(@PathVariable Integer id, 
+        @RequestBody ProductResponseTO productRequestTO){
+    	CurrentPrice currentPrice = null;
+        currentPrice = productRequestTO.getCurrentPrice();
+        BigDecimal value = currentPrice.getValue();
+        String currencyCode = currentPrice.getCurrencyCode();
+        ProductPriceInfo productpriceinfo = null;
+        if(id != null && value != null && currencyCode != null){
+        	productpriceinfo = new ProductPriceInfo(
+        			id.toString(),
+        			value,
+        			currencyCode);
+        }
+      
+      Map<String, Object> response = new LinkedHashMap<String, Object>();
+      response.put("message", "Product Price Info Updated successfully");
+      response.put("productpriceinfo", productPriceInfoRepository.save(productpriceinfo));
+      return response;
+    }    
     
 }
