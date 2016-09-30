@@ -154,6 +154,7 @@ https://console.run.pivotal.io/tools
 Hello*****
 
 # mongodb commands
+FIRST CMD ADMIN WINDOW
 C:\mongodb\bin>mongo.exe
 MongoDB shell version: 3.2.9
 connecting to: test
@@ -163,6 +164,9 @@ PriceInfo     0.000GB
 ProductPrice  0.000GB
 local         0.000GB
 test          0.000GB
+
+SECOND CMD ADMIN WINDOW
+
 C:\mongodb\bin>mongod.exe --dbpath="c:\mongodb\data\db"
  use ProductPrice
  db.productPriceInfo.find().pretty();
