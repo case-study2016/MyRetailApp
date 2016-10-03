@@ -247,3 +247,9 @@ https://spring.io/blog/2015/07/14/microservices-with-spring
 https://spring.io/blog/2014/11/07/webinar-replay-security-for-microservices-with-spring-and-oauth2
 http://www.appsdev.is.ed.ac.uk/blog/?p=820
 https://spring.io/blog/2015/10/19/springone2gx-2015-replay-securing-microservices-with-spring-cloud-security
+
+
+# DONE
+
+1. logback logging
+2. 
