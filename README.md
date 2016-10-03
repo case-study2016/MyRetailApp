@@ -171,3 +171,79 @@ C:\mongodb\bin>mongod.exe --dbpath="c:\mongodb\data\db"
  use ProductPrice
  db.productPriceInfo.find().pretty();
  
+ 
+ # ADD @ CROSSORIGIN
+ # Configure mongodb in PCF
+ 
+# Test external API
+# http://stackoverflow.com/questions/29550098/mock-external-server-during-integration-testing-with-spring 
+
+# Life cycle detection in PCF
+
+#https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4
+
+#http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
+
+# Mock Test case
+https://www.petrikainulainen.net/programming/spring-framework/unit-testing-of-spring-mvc-controllers-rest-api/
+# spring boot MOck MVC
+http://stackoverflow.com/questions/29053974/how-to-i-write-a-unit-test-for-a-spring-boot-controller-endpoint
+
+https://www.jayway.com/2014/07/04/integration-testing-a-spring-boot-application/
+
+#refer
+https://www.infoq.com/interviews/long-spring-boot-cloud
+
+# implemeny HYstrix
+
+https://github.com/bijukunjummen/sample-spring-hystrix
+
+
+# very good example for HYSTRIX https://github.com/spring-cloud-samples/customers-stores
+https://github.com/spring-cloud-samples/customers-stores
+https://github.com/spring-cloud-samples/customers-stores
+https://github.com/spring-cloud-samples/customers-stores
+
+https://www.youtube.com/watch?v=ngRa_1pIjJI  -hystrix
+https://spring.io/guides/gs/circuit-breaker/
+
+https://dzone.com/articles/using-netflix-hystrix
+https://dzone.com/articles/hystrix-and-spring-boot
+https://exampledriven.wordpress.com/2016/07/05/spring-cloud-hystrix-example/
+
+
+https://www.infoq.com/articles/boot-microservices
+
+
+https://zeroturnaround.com/rebellabs/why-spring-is-winning-the-microservices-game/
+
+https://alexandreesl.com/2014/12/21/hands-on-implementando-microservicos-com-spring-boot/
+
+
+
+# spring boot maven wrapper
+
+https://github.com/spring-projects/spring-boot
+https://github.com/takari/maven-wrapper
+https://github.com/spring-projects/spring-boot/issues/4193
+https://gitlab.com/Spring-Boot-Tutorials/Hello-Spring-Boot/blob/master/mvnw.cmd
+
+
+# remove all sysouts
+
+# spring microservices
+
+https://dzone.com/articles/spring-boot-creating
+
+http://blog.scottlogic.com/2016/06/13/code-reuse-in-microservices-architecture.html
+
+http://blog.scottlogic.com/2016/06/13/code-reuse-in-microservices-architecture.html
+
+https://spring.io/blog/2015/07/14/microservices-with-spring
+
+  
+#spring boot security for microservice.
+
+https://spring.io/blog/2014/11/07/webinar-replay-security-for-microservices-with-spring-and-oauth2
+http://www.appsdev.is.ed.ac.uk/blog/?p=820
+https://spring.io/blog/2015/10/19/springone2gx-2015-replay-securing-microservices-with-spring-cloud-security
