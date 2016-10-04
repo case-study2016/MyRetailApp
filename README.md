@@ -251,5 +251,15 @@ https://spring.io/blog/2015/10/19/springone2gx-2015-replay-securing-microservice
 
 # DONE
 
-1. logback logging
-2. 
+1. logback logging - DONE
+2. maven wrapper - The Maven Wrapper is an easy way to ensure a user of your Maven build    has everything necessary to run your Maven build. - DONE
+3.Exception/Error handling 
+4.Change Github repo - 
+5.Update readme file
+6.Add Comments
+7.Format code
+8.Swagger UI
+9.Host in PCF
+10.Hystrix
+11.Remove Sysouts. 
+12.Update instructions to run the code in README.MD
